@@ -40,7 +40,7 @@ class nats (
 ) {
   if $ensure == "present" {
     if $servers.empty or $facts["networking"]["fqdn"] in $servers {
-      notify{"The choria/nats module is now deprecated, please use choria/choria": }
+      # notify{"The choria/nats module is now deprecated, please use choria/choria": }
 
       $peers = $servers.filter |$s| { $s != $facts["networking"]["fqdn"] }
 
